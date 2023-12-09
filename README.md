@@ -16,6 +16,7 @@
     - [ ] Golang
 - [ ] Treesitter for better highlighting
 - [ ] Git integration
+- [ ] Auto formatting code
 
 ## Nice to have
 
