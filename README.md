@@ -9,12 +9,12 @@
     - [x] Buffer
     - [x] Spell
 - [x] Custom theme
-- [ ] Fuzzy file finder
+- [x] Fuzzy file finder
 - [ ] Tab-bar
 - [ ] LSP
     - [ ] Javascript
     - [ ] Golang
-- [ ] Treesitter for better highlighting
+- [x] Treesitter for better highlighting
 - [ ] Git integration
 - [ ] Auto formatting code
 
