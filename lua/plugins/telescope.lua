@@ -1,5 +1,24 @@
 local config = function()
-  require("telescope").load_extension("fzf")
+  local telescope = require("telescope")
+  local actions = require("telescope.actions")
+
+  telescope.load_extension("fzf")
+
+  telescope.setup({
+		defaults = {
+			file_ignore_patterns = { "node_modules" },
+			mappings = {
+				i = {
+					["<esc>"] = actions.close,
+				},
+			},
+			pickers = {
+				find_files = {
+					hidden = true,
+				},
+			},
+		},
+	})
 end
 
 return {
