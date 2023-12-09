@@ -1,10 +1,10 @@
 local config = function()
-  local telescope = require("telescope")
-  local actions = require("telescope.actions")
+	local telescope = require("telescope")
+	local actions = require("telescope.actions")
 
-  telescope.load_extension("fzf")
+	telescope.load_extension("fzf")
 
-  telescope.setup({
+	telescope.setup({
 		defaults = {
 			file_ignore_patterns = { "node_modules" },
 			mappings = {
@@ -22,16 +22,16 @@ local config = function()
 end
 
 return {
-  'nvim-telescope/telescope.nvim',
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-    "nvim-lua/popup.nvim",
+	"nvim-telescope/telescope.nvim",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"nvim-lua/popup.nvim",
 		"nvim-treesitter/nvim-treesitter",
 		{
-		  "nvim-telescope/telescope-fzf-native.nvim",
+			"nvim-telescope/telescope-fzf-native.nvim",
 			build = "make",
 		},
-  },
-  config = config,
-  cmd = "Telescope"
+	},
+	config = config,
+	cmd = "Telescope",
 }

@@ -6,14 +6,14 @@
 - [x] Basic options
 - [x] File tree
 - [x] Autocomplete
-    - [x] Buffer
-    - [x] Spell
+  - [x] Buffer
+  - [x] Spell
 - [x] Custom theme
 - [x] Fuzzy file finder
 - [ ] Tab-bar
 - [ ] LSP
-    - [ ] Javascript
-    - [ ] Golang
+  - [ ] Javascript
+  - [ ] Golang
 - [x] Treesitter for better highlighting
 - [ ] Git integration
 - [ ] Auto formatting code
