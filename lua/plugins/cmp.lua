@@ -1,11 +1,27 @@
+local function in_string()
+	local context = require("cmp.config.context")
+	return context.in_treesitter_capture("string") or context.in_syntax_group("String")
+end
+
+local function in_spell()
+	local context = require("cmp.config.context")
+	return context.in_treesitter_capture("spell")
+end
+
 function config()
   local cmp = require('cmp')
   local cmp_action = require('lsp-zero').cmp_action()
   local cmp_format = require('lsp-zero').cmp_format()
+  local luasnip = require("luasnip")
 
   cmp.setup({
     sources = {
-      {name = 'lua_snip'},
+      {
+				name = "luasnip",
+				entry_filter = function()
+					return not in_string()
+				end,
+			},
       {name = 'treesitter'},
       {name = 'nvim_lsp'},
       {name = 'nvim_lua'},
@@ -16,9 +32,7 @@ function config()
           name = 'spell',
           option = {
               keep_all_entries = false,
-              enable_in_context = function()
-                  return true
-              end,
+              enable_in_context = in_spell,
           },
       },
     },
@@ -39,6 +53,11 @@ function config()
       ['<C-d>'] = cmp.mapping.scroll_docs(4),
     }),
     formatting = cmp_format,
+    snippet = {
+			expand = function(args)
+				luasnip.lsp_expand(args.body)
+			end,
+		},
   })
 end
 
