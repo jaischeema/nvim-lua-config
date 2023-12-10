@@ -8,7 +8,7 @@ local function in_spell()
 	return context.in_treesitter_capture("spell")
 end
 
-function config()
+local function config()
 	local cmp = require("cmp")
 	local cmp_action = require("lsp-zero").cmp_action()
 	local cmp_format = require("lsp-zero").cmp_format()
@@ -44,6 +44,10 @@ function config()
 			-- Ctrl+Space to trigger completion menu
 			["<C-Space>"] = cmp.mapping.complete(),
 
+			-- Super Tab
+			["<Tab>"] = cmp_action.tab_complete(),
+			["<S-Tab>"] = cmp_action.select_prev_or_fallback(),
+
 			-- Navigate between snippet placeholder
 			["<C-f>"] = cmp_action.luasnip_jump_forward(),
 			["<C-b>"] = cmp_action.luasnip_jump_backward(),
@@ -52,11 +56,18 @@ function config()
 			["<C-u>"] = cmp.mapping.scroll_docs(-4),
 			["<C-d>"] = cmp.mapping.scroll_docs(4),
 		}),
+
 		formatting = cmp_format,
+
 		snippet = {
 			expand = function(args)
 				luasnip.lsp_expand(args.body)
 			end,
+		},
+
+		window = {
+			completion = cmp.config.window.bordered(),
+			documentation = cmp.config.window.bordered(),
 		},
 	})
 end

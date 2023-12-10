@@ -1,6 +1,8 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	theme = "tokyonight",
+	opts = {
+		theme = "tokyonight",
+	},
 	dependencies = {
 		"folke/tokyonight.nvim",
 	},
