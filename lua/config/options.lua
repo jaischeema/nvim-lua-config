@@ -1,6 +1,6 @@
 local set = vim.opt
 
-vim.cmd.colorscheme("tokyonight")
+vim.cmd.colorscheme("melange")
 
 set.expandtab = true -- no real tabs please!
 set.shiftround = true -- when at 3 spaces, and I hit > ... go to 4, not 5
