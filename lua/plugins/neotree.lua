@@ -7,4 +7,7 @@ return {
 		"MunifTanjim/nui.nvim",
 	},
 	cmd = "Neotree",
+	opts = {
+		close_if_last_window = true,
+	},
 }
