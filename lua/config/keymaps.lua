@@ -16,9 +16,6 @@ map("n", "<C-l>", "<c-w>l")
 map("n", "<tab>", "<c-w>w", { noremap = true, silent = true })
 map("n", "<S-tab>", "<c-w>W", { noremap = true, silent = true })
 
--- Other helpers
-map("n", "<leader>f", ":noh<CR>", { desc = "Clear highlights" })
-
 -- Telescope
 local builtin = require("telescope.builtin")
 
