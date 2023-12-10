@@ -17,11 +17,12 @@
 - [x] Treesitter for better highlighting
 - [ ] Git integration
 - [x] Auto formatting code
+- [ ] vim-surround functionality
 
 ## Nice to have
 
+- [x] All the different spellings for quit commands
 - [ ] Close the editor when the tree is the only remaining window
-- [ ] All the different spellings for quit commands
 - [ ] Get which-key plugin working
 
 ## Annoying things
